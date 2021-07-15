@@ -1,0 +1,79 @@
+online farmer eduction system
+
+-> login/ registration
+using phone number
+
+-> here two role are there
+1) farmer
+2) admin
+
+-> newsroom
+many section
+government schime
+any natural event
+workshops on differnt skilles
+
+-> education
+diffrent section like agri , marine , vorti , etc
+i each section more section are there like
+agri cantain lots of 'pak'
+
+for each pak seed rog , mavjat , lalani this this are return in like blog which set by admin
+
+-> weather 
+for rain , temp  , wend show diffrent graph
+
+-> dought section 
+1) search dought 
+by seach on search box 
+by select tag
+by word also suported 
+
+2) post dought 
+u can post dought for relivent pak  and problem this thing are in tag so farmer shold be select tag
+general chet bot 
+
+
+
+for admin
+1 ) weather elert in home page or other elert
+2) post edu blog 
+2) post resent problem in home page
+4) orgenize event and enounce in newsroom and home page
+
+
+basic feed/ home page
+some alert/ event like codechef has 4 changing page 
+next section has some sesion pak blog
+
+
+
+for designing froun end 
+
+indpent functionality
+1) login and registration
+2) dought section 
+3) newsroom
+	event template
+	government schime 
+	
+4) eduction design and each pak has some predefine stuture like seed , rog , mavjat , lanani , 
+5) weather
+6 )  admin
+	diffrent blog stuture 
+	like 
+	1) newsroom
+	2) edu pak 
+	3)
+
+	diffrent alrt
+	weather
+	some gov sechime
+	
+
+	program interface
+	like video steaming
+	pdf or dought solving chatbot
+	
+
+
