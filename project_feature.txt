@@ -79,3 +79,41 @@ indpent functionality
 we will be done first education part that move to dought solving part
 
 
+education part
+
+how to impimented the new blog ?
+because the image and text are there 
+sso we use some api or we need to manage so section or partation 
+or we can make image text image some boxes are implemnt 
+in image some size must be specify  or 
+we can do both parll div inside div image and div  text
+
+
+jenil 
+
+login and registration
+for both role
+
+for login we don't need to make srs just design only think of backed
+
+newsroom
+srs and design(like sequance diagram , class diragram , ... all we made in SEPP) and code it unit test
+
+
+fenil
+
+in education part
+post writing page for admin
+srs and design(like sequance diagram , class diragram , ... all we made in SEPP) and code it unit test
+
+
+
+remaining
+
+dought
+weather
+
+do chack it out doc doc link
+
+https://docs.google.com/document/d/1TtBP8llo-zOgsqEkgjYPUrueLhaFpg_Zm_cdrzBK4rY/edit#
+
