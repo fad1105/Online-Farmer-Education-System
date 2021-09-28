@@ -31,14 +31,15 @@ export default function Navbar(props) {
                 </a>
               </li>
             </ul>
-            <form className="d-flex">
+            <form className="d-flex ">
               <input
-                className="form-control me-2"
+                className="form-control me-2 bg-outline-success"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+
               />
-              <button className="btn btn-primary" type="submit">
+              <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
             </form>
