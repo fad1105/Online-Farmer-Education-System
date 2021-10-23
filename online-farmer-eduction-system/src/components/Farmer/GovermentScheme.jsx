@@ -1,7 +1,21 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import PropTypes from "prop-types";
 import SchemeCard from "./SchemeCard";
+import axios from "axios";
+
 export default function GovermentScheme() {
+
+		useState(() => {
+		axios.get("/data")
+		.then((response) => {
+			 const data = response.data;
+			 //this.setState({posts : data});
+			console.log(data[0].name);
+		})
+		.catch(()=> {
+			alert("Error on retrieving data!");
+		});
+	});
 	return (
 		<> 
 		<div className="row text-center "  >

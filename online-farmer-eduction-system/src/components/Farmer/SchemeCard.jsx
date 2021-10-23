@@ -7,7 +7,7 @@ export default function SchemeCard(props) {
 			<div className="card" style={{width: "50rem"}}>
   				<div className="card-body">
     				<p className="card-text">{props.title}</p>
-    				<a href={props.href} class="card-link">Download</a>
+    				<a href={props.href} className="card-link">Download</a>
     				<img src={props.src} width={props.width} hight={props.width} alt={props.alt} border={props.border}/>
   				</div>
 			</div>

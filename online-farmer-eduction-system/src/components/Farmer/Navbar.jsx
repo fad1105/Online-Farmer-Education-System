@@ -1,12 +1,12 @@
 import React from "react";
-
+import {Link} from 'react-router-dom';
 export default function Navbar(props) {
   return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             {props.title}
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -26,17 +26,17 @@ export default function Navbar(props) {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <Link className="nav-link active" aria-current="page" to="/education">
                   Education
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             News Room
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="/">Events</a></li>
-            <li><a className="dropdown-item" href="/">Goverment Scheme</a></li>
+            <li><Link className="dropdown-item" to="/events">Events</Link></li>
+            <li><Link className="dropdown-item" to="/govermentschemes">Goverment Scheme</Link></li>
           </ul>
         </li>
               <li className="nav-item">
@@ -45,17 +45,9 @@ export default function Navbar(props) {
                 </a>
               </li>
             </ul>
-            <form className="d-flex ">
-              <input
-                className="form-control me-2 bg-outline-success"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
+            <form className="d-flex"> 
+                    <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
+                    <Link className="btn btn-primary mx-1" to="/signup" role="button">Signup</Link>
             </form>
           </div>
         </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 import EventCard from './EventCard';
-export default function Event() {
+export default function Event() { 
+    
 	return (
 		<>
-    <div >
     <div className="row text-center "  >
         
         <div className="my-5" style={{color:"white"}}>
@@ -16,8 +16,6 @@ export default function Event() {
     <EventCard event="5" about="Scheme" address="Rajkot bus port" time="1 October, 2021. 6:00 PM" />
     <EventCard event="6" about="Scheme" address="Rajkot bus port" time="1 October, 2021. 6:00 PM" />
      </div>
-
-    </div>
     </>
 	)
 }
