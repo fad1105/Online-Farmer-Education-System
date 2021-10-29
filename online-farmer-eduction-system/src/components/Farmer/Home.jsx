@@ -17,10 +17,7 @@ export default function home(props) {
     <>
       <Router>
         <div
-          style={{
-            backgroundImage:
-              "url(https://education.icar.gov.in/public/images/background.png)",
-          }}
+          
         >
           <Navbar />
           <div className="container">
@@ -33,33 +30,25 @@ export default function home(props) {
               </Route>
               <Route path="/education">
                 <Education />
-                {/* <BlogTable/> */}
               </Route>
-              {/* <Route path="/blogfarmer/:name">
-                <Blogfarmer name={props.match.params.name} />
-              </Route> */}
               <Route
                 exact
                 path="/blogTable/:name"
-                render={(props) => (
-                  <BlogTable name={props.match.params.name} />
-                )}
+                render={(props) => <BlogTable name={props.match.params.name} />}
               />
               <Route
                 exact
                 path="/blog/:id"
-                render={(props) => (
-                  <Blogfarmer id={props.match.params.id} />
-                )}
+                render={(props) => <Blogfarmer id={props.match.params.id} />}
               />
-              <Route path="/weather">
-                <Weather />
-              </Route>
               <Route path="/login">
                 <Login />
               </Route>
               <Route path="/signup">
                 <SignUp />
+              </Route>
+              <Route path="/">
+                <Weather />
               </Route>
             </Switch>
           </div>
@@ -77,3 +66,21 @@ Navbar.defaultProps = {
   title: "Farmers' Portal",
   aboutText: "About",
 };
+
+/* 
+<Route
+                exact
+                path="/blogTable/:name"
+                render={(props) => (
+                  <BlogTable name={props.match.params.name} />
+                )}
+              />
+              <Route
+                exact
+                path="/blog/:id"
+                render={(props) => (
+                  <Blogfarmer id={props.match.params.id} />
+                )}
+              />
+
+*/

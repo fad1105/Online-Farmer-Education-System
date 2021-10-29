@@ -1,7 +1,8 @@
 const mon = require('mongoose');
 
 let eventSchema = new mon.Schema({
-	_id:mon.Schema.Types.ObjectId,
+	//_id:mon.Schema.Types.ObjectId(),
+	eventnumber:Number,
 	title:String,
 	address:String,
 	date:Date

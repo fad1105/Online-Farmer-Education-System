@@ -2,7 +2,6 @@ const connectToMongo = require('./db');
 const express = require('express');
 const mon = require("mongoose")
 var cors = require('cors');
-
 //connectToMongo();
 const app = express();
 const port = 5000;
@@ -20,6 +19,7 @@ mon.connect("mongodb+srv://fad1105:fad1105@cluster0.s7ct1.mongodb.net/OnlineFarm
 
 //Routes
 app.use('/events', require('./routes/events'))
+app.use('/schemes', require('./routes/govermentscheme'))
 app.use('/auth', require('./routes/auth'))
 app.use('/education', require('./routes/education'))
 // Event.find({}, function(err,events)
