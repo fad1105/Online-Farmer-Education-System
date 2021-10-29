@@ -31,7 +31,7 @@ export default function Navbar(props) {
                 </Link>
               </li>
               <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a className="nav-link dropdown-toggle active" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             News Room
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -40,7 +40,7 @@ export default function Navbar(props) {
           </ul>
         </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <a className="nav-link active" href="/">
                   {props.aboutText} 
                 </a>
               </li>

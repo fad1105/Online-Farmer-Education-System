@@ -1,24 +1,27 @@
 const connectToMongo = require('./db');
 const express = require('express');
 var cors = require('cors');
-
-connectToMongo();
+const mon = require('mongoose');
+//connectToMongo();
 const app = express();
 const port = 5000;
 
 app.use(cors());
 app.use(express.json());
 
-// mon.connect("mongodb+srv://Jenil:Jenil@cluster0.ec81c.mongodb.net/Practice?retryWrites=true&w=majority",
-// {
-// 	useNewUrlParser:true,
-// 	useUnifiedTopology:true
-// }).then(()=>{
-// 	console.warn("DB is now connected");
-// })
+//mongodb+srv://Jenil:Jenil@cluster0.ec81c.mongodb.net/Practice?retryWrites=true&w=majority
+
+mon.connect("mongodb+srv://fad1105:fad1105@cluster0.s7ct1.mongodb.net/OnlineFarmerEducationSystem?retryWrites=true&w=majority",
+{
+	useNewUrlParser:true,
+	useUnifiedTopology:true
+}).then(()=>{
+	console.warn("DB is now connected");
+})
 
 //Routes
 app.use('/events', require('./routes/events'))
+app.use('/schemes', require('./routes/govermentscheme'))
 app.use('/auth', require('./routes/auth'))
 // Event.find({}, function(err,events)
 // {

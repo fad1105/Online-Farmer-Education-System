@@ -1,7 +1,19 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import EventCard from './EventCard';
-export default function Event() { 
-    
+import axios from "axios";
+
+export default function Event() {
+    const [posts,setPosts] = useState([])
+    useEffect(()=> {
+        axios.get("/events/fetchevents")
+        .then(res => {
+            console.log(res)
+            setPosts(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    },[]) 
 	return (
 		<>
     <div className="row text-center "  >
@@ -9,12 +21,11 @@ export default function Event() {
         <div className="my-5" style={{color:"white"}}>
         <h1> Events</h1>
         </div>
-    <EventCard event="1" about="Scheme" address="Rajkot bus port" time="1 October, 2021. 6:00 PM" />
-    <EventCard event="2" about="Scheme" address="Rajkot bus port" time="1 October, 2021. 6:00 PM" />
-    <EventCard event="3" about="Scheme" address="Rajkot bus port" time="1 October, 2021. 6:00 PM" />
-    <EventCard event="4" about="Scheme" address="Rajkot bus port" time="1 October, 2021. 6:00 PM" />
-    <EventCard event="5" about="Scheme" address="Rajkot bus port" time="1 October, 2021. 6:00 PM" />
-    <EventCard event="6" about="Scheme" address="Rajkot bus port" time="1 October, 2021. 6:00 PM" />
+        {
+            posts.map(post => (
+                <EventCard event={post.eventnumber} about={post.title} address={post.address} time= {post.date} />
+            ))
+        }
      </div>
     </>
 	)

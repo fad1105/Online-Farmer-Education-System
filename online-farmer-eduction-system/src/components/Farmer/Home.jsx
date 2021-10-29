@@ -7,6 +7,8 @@ import GovermentScheme from './GovermentScheme';
 import Event from "./Event";
 import Login from "./Login";
 import SignUp from "./Register";
+import Weather from "./Weather";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,6 +32,9 @@ export default function home() {
           </Route>
           <Route path="/education">
             <Education />
+          </Route>
+          <Route path="/">
+            <Weather />
           </Route>
           <Route path="/login">
             <Login />

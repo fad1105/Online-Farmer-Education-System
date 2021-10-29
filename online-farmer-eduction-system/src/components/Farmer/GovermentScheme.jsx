@@ -4,18 +4,17 @@ import SchemeCard from "./SchemeCard";
 import axios from "axios";
 
 export default function GovermentScheme() {
-
-		useState(() => {
-		axios.get("/data")
-		.then((response) => {
-			 const data = response.data;
-			 //this.setState({posts : data});
-			console.log(data[0].name);
-		})
-		.catch(()=> {
-			alert("Error on retrieving data!");
-		});
-	});
+	const [posts,setPosts] = useState([])
+    useEffect(()=> {
+        axios.get("/schemes/fetchschemes")
+        .then(res => {
+            console.log(res)
+            setPosts(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    },[])
 	return (
 		<> 
 		<div className="row text-center "  >
@@ -23,11 +22,11 @@ export default function GovermentScheme() {
         <div className="my-5" style={{color:"white"}}>
         <h1> Goverment Schemes</h1>
         </div>
-			<SchemeCard href="https://agricoop.nic.in/sites/default/files/Nam23122015.pdf" title="National Agriculture Market (NAM) through Agri Tech Infrastructure Fund (ATIF)"/>
-			<SchemeCard href="https://agricoop.nic.in/sites/default/files/OpGdTM.pdf" title="Central Sector Schemes (Terminal Market Complex)"/>
-			<SchemeCard href="https://agricoop.nic.in/sites/default/files/pssguidelines.pdf" title="Price Support Scheme (PSS): Operational Guidelines"/>
-			<SchemeCard href="https://agricoop.nic.in/sites/default/files/jsdostatesut.pdf" title="JS DO Letters to States and UTs"/>
-			<SchemeCard href="https://agricoop.nic.in/sites/default/files/Programmes%20%26%20Schemes%20of%20Drought%20Management.pdf" title="drought remedies"/>
+        {
+        	posts.map(post => (
+        		<SchemeCard href={post.pdfurl} title={post.title}/>
+        		))
+        }
 			</div>
 		</>
 	)
