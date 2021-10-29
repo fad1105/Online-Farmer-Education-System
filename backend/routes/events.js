@@ -20,7 +20,7 @@ router.get('/fetchevents',async (req,res) => {
 // ROUTE 2: Add a new Event using: POST "events/addnote". Login required
 router.post('/addevent', fetchuser, [
     body('title', 'Minlength of title is 5').isLength({ min: 5 }),
-    body('address', 'Description must be atleast 5 characters').isLength({ min: 5 }),
+    body('ad    dress', 'Description must be atleast 5 characters').isLength({ min: 5 }),
     body('date')], async (req, res) => {
         try {
         	if(req.user.isadmin==true)

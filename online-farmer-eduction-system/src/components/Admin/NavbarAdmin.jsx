@@ -4,7 +4,7 @@ export default function Navbar(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/admin/">
           {props.title}
         </Link>
         <button
@@ -21,20 +21,45 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <a className="nav-link active" aria-current="page" href="/admin/">
                 Home
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 className="nav-link active"
                 aria-current="page"
-                to="/education"
+                to="/admin/education/"
               >
                 Education
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item dropdown active">
+              <a
+                className="nav-link dropdown-toggle active"
+                href="/"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Education
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <Link className="dropdown-item" to="/admin/education/newblog">
+                    New Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/admin/education/editblog">
+                    Edit Blog
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            </ul>
+            {/* <li className="nav-item dropdown active">
               <a
                 className="nav-link dropdown-toggle active"
                 href="/"
@@ -71,7 +96,7 @@ export default function Navbar(props) {
             <Link className="btn btn-primary mx-1" to="/signup" role="button">
               Signup
             </Link>
-          </form>
+          </form> */}
         </div>
       </div>
     </nav>

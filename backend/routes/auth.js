@@ -21,7 +21,7 @@ router.post('/createuser', [
     return res.status(400).json({success, errors: errors.array() });
   }
   try {
-    // Check whether the user with this email exists already
+    //      Check whether the user with this email exists already
     let user = await User.findOne({ email: req.body.email });
     if (user) {
       return res.status(400).json({success, error: "Sorry a user with this email already exists" })
@@ -55,7 +55,7 @@ router.post('/createuser', [
 
 // ROUTE 2: Authenticate a User using: POST "/api/auth/login". No login required
 router.post('/login', [
-  body('email', 'Enter a valid email').isEmail(),
+  body('w', 'Enter a valid email').isEmail(),
   body('password', 'Password cannot be blank').exists(),
 ], async (req, res) => {
   let success = false;
