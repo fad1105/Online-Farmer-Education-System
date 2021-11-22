@@ -55,7 +55,7 @@ router.post('/createuser', [
 
 // ROUTE 2: Authenticate a User using: POST "/api/auth/login". No login required
 router.post('/login', [
-  body('w', 'Enter a valid email').isEmail(),
+  body('email', 'Enter a valid email').isEmail(),
   body('password', 'Password cannot be blank').exists(),
 ], async (req, res) => {
   let success = false;

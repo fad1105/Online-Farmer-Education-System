@@ -1,5 +1,6 @@
 const express = require('express');
 const { isValidObjectId } = require('mongoose');
+const { body, validationResult } = require('express-validator');
 const router = express.Router();
 const Blog = require('../models/Blog');
 
@@ -20,6 +21,27 @@ router.get('/getallblog', async (req, res) => {
     }
     res.send("error")
 })
+
+router.post('/addblog', [
+    body('selectType'),
+    body('title '),
+    body('imageURL'),
+    body('description')
+], async (req, res) => {
+
+    let blog = await Blog.create({
+        type: req.body.selectType,
+        title: req.body.title,
+        imgurl: req.body.imageURL,
+        description: req.body.description
+    })
+    console.log(blog);
+
+    res.send({"msg":"success" , "data":"blog"})
+});
+
+
+
 router.get('/blog/:id', async (req, res) => {
     //id = "61744b80f6000183103a2ce2";
     let blog = await Blog.findOne({ _id: req.params.id.toString() });
@@ -30,5 +52,10 @@ router.get('/blog/:id', async (req, res) => {
     else {
         res.json("error")
     }
+})
+
+router.delete('/blog/:id', (req,res,next)=>{
+    Driver.findByIdAndRemove({_id:req.params.id})
+    .then(driver => res.send(driver));
 })
 module.exports = router

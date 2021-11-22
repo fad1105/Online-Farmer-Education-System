@@ -3,12 +3,13 @@ import axios from "axios";
 
 export default function Blogfarmer(props) {
   const [posts, setPosts] = useState([]);
-
+  let count = 0 ;
   useEffect(() => {
     axios
       .get("/education/blog/" + props.id)
       .then((res) => {
-        console.log(res);
+        console.log(count);
+        count = count + 1 ;
         setPosts(res.data);
       })
       .catch((err) => {

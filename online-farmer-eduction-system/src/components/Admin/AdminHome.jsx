@@ -3,8 +3,10 @@ import EditBlog from "./EditBlog";
 import Blogwriter from "./Blogwriter";
 import NavbarAdmin from './NavbarAdmin'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";    
+import Blogfarmer from "../Farmer/BlogFarmer";
 
 export default function AdminHome() {
+  
   return (
     <div>
       <Router>
@@ -23,6 +25,11 @@ export default function AdminHome() {
               <Route path="/admin/education/editblog">
                   <EditBlog/>
               </Route>
+              <Route
+                exact
+                path="/admin/education/blog/:id"
+                render={(props) => <Blogfarmer id={props.match.params.id} />}
+              />
               {/* <Route path="/govermentschemes">
                 <GovermentScheme />
               </Route> */}

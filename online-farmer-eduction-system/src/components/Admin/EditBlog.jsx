@@ -18,10 +18,13 @@ export default function EditBlog() {
       });
   }, []);
 
-  const goToBlog = (e) => {
-    history.push("/blog/" + e.id );
-
+  const deleteBlog = ( id) => {
   }
+
+  // const goToBlog = (e) => {
+  //   history.push("/admin/education/blog/" + e.id );
+
+  // }
 
   return (
     <>
@@ -29,15 +32,25 @@ export default function EditBlog() {
         <thead>
           <tr>
             <th scope="col">Title</th>
+            <th scope="col">Type</th>
             <th scope="col">Read Blog</th>
+            <th scope="col">Delete Blog</th>
           </tr>
         </thead>
         <tbody>
           {posts.map((item) => (
             <tr key={item.id}>
               <td>{item.title}</td>
+              <td>{item.type}</td>
               <td>
-                <button type="button" className="btn btn-success" onClick={()=>{history.push("/blog/" + item._id );}} id ={item._id}>
+                {/* <button> */}
+                <button type="button" className="btn btn-outline-success" onClick={()=>{history.push("/admin/education/blog/" + item._id );}} id ={item._id}>
+                  Read Blog
+                </button>
+              </td>
+              <td>
+                {/* <button> */}
+                <button type="button" className="btn btn-outline-danger" onClick={deleteBlog(item._id)} id ={item._id}>
                   Read Blog
                 </button>
               </td>
