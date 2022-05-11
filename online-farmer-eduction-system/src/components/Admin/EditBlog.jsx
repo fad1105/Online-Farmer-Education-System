@@ -51,7 +51,7 @@ export default function EditBlog() {
               <td>
                 {/* <button> */}
                 <button type="button" className="btn btn-outline-danger" onClick={deleteBlog(item._id)} id ={item._id}>
-                  Read Blog
+                  Delete Blog
                 </button>
               </td>
             </tr>
